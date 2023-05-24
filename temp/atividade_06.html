@@ -8,93 +8,63 @@
             var dez = Math.trunc((int % 100) / 10);
 
         if (int >= 100 && cent > 1 && dez > 1 && uni > 1) {
-            let uni = ((int % 100) % 10);
-            let cent = Math.floor(int / 100);
-            let dez = Math.trunc((int % 100) / 10);
             alert(`${cent} centenas, ${dez} dezenas e ${uni} unidades`);
         }
 
         else if (int >= 100 && cent > 1 && dez > 1 && uni < 2) {
-            let uni = ((int % 100) % 10);
-            let cent = Math.floor(int / 100);
-            let dez = Math.trunc((int % 100) / 10);
             alert(`${cent} centenas, ${dez} dezenas e ${uni} unidade`);
         }
 
         else if (int >= 100 && cent > 1 && dez < 2 && uni > 1) {
-            let uni = ((int % 100) % 10);
-            let cent = Math.floor(int / 100);
-            let dez = Math.trunc((int % 100) / 10);
             alert(`${cent} centenas, ${dez} dezena e ${uni} unidades`);
         }
 
         else if (int >= 100 && cent < 2 && dez < 2 && uni > 1) {
-            let uni = ((int % 100) % 10);
-            let cent = Math.floor(int / 100);
-            let dez = Math.trunc((int % 100) / 10);
             alert(`${cent} centena, ${dez} dezena e ${uni} unidades`);
         }
 
         else if (int >= 100 && cent > 1 && dez < 2 && uni < 2) {
-            let uni = ((int % 100) % 10);
-            let cent = Math.floor(int / 100);
-            let dez = Math.trunc((int % 100) / 10);
             alert(`${cent} centenas, ${dez} dezena e ${uni} unidade`);
         }
 
         else if (int >= 100 && cent < 2 && dez > 1 && uni > 1) {
-            let uni = ((int % 100) % 10);
-            let cent = Math.floor(int / 100);
-            let dez = Math.trunc((int % 100) / 10);
             alert(`${cent} centena, ${dez} dezenas e ${uni} unidades`);
         }
 
         else if (int >= 100 && cent < 2 && dez > 1 && uni < 2) {
-            let uni = ((int % 100) % 10);
-            let cent = Math.floor(int / 100);
-            let dez = Math.trunc((int % 100) / 10);
             alert(`${cent} centena, ${dez} dezenas e ${uni} unidade`);
         }
 
         else if (int >= 100 && cent < 2 && dez < 2 && uni < 2) {
-            let uni = ((int % 100) % 10);
-            let cent = Math.floor(int / 100);
-            let dez = Math.trunc((int % 100) / 10);
             alert(`${cent} centena, ${dez} dezena e ${uni} unidade`);
         }
 
         if (int < 100 && dez > 1 && uni > 1) {
-            let dez = Math.trunc(int / 10)
+            let dez = Math.trunc(int / 10);
             let uni = int % 10;
-            alert(`${dez} dezenas e ${uni} unidades`)
+            alert(`${dez} dezenas e ${uni} unidades`);
         }
 
         else if (int < 100 && dez > 1 && uni < 2 ){
-            let dez = Math.trunc(int / 10)
-            let uni = int % 10;
-            alert(`${dez} dezenas e ${uni} unidade`)
+            alert(`${dez} dezenas e ${uni} unidade`);
         }
 
         else if (int < 100 && int > 9 && dez < 2 && uni < 2){
-            let dez = Math.trunc(int / 10)
-            let uni = int % 10;
-            alert(`${dez} dezena e ${uni} unidade`)
+            alert(`${dez} dezena e ${uni} unidade`);
         }
 
         else if (int < 100 && int > 9 && dez < 2 && uni > 1){
-            let dez = Math.trunc(int / 10)
-            let uni = int % 10;
-            alert(`${dez} dezena e ${uni} unidades`)
+            alert(`${dez} dezena e ${uni} unidades`);
         }
 
         if (int < 10 && int > 1) {
-            alert(`${int} unidades`)
+            alert(`${int} unidades`);
         }
 
         else if (int < 10 && int < 2) {
-            alert(`${int} unidade`)
+            alert(`${int} unidade`);
         }
     } else {
-        alert(`Apenas números menores que 1000!`)
+        alert(`Apenas números menores que 1000!`);
     }
 </script>
