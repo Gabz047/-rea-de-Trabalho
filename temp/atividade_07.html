@@ -1,0 +1,93 @@
+<meta charset="UTF-8">
+<script>
+    const saque = Number(prompt("Bem vindo ao banco do Brasil! Informe o valor que deseja sacar: (mínimo 10 reais, máximo 600 reais)"));
+    var nota100 = Math.trunc(saque / 100);
+    var nota50 = Math.floor((saque % 100) / 50);
+    var nota10 = Math.trunc(((saque - nota100 * 100) - nota50 * 50) / 10);
+    var nota5 = Math.trunc((((saque - nota100 * 100) - nota50 * 50) - nota10 * 10) / 5);
+    var nota1 = ((((saque - nota100 * 100) - nota50 * 50) - nota10 * 10) - nota5 * 5);
+
+    if (saque >= 10 && saque <= 600) {
+        var casa3 = ((saque % 100) % 10)
+        var casa2 = Math.trunc((saque % 100) % 10)
+        var casa1 = Math.trunc(saque / 100)
+        var casa1d = Math.trunc(saque / 10)
+        var casa2d = saque % 10
+
+        if (casa1 > 0 && casa1 < 7) {
+
+            if (casa2 < 5 && casa2 > 0 && casa3 === 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${notas10} notas de 10 e ${notas5} nota de 5`);
+            } else if (casa2 < 5 && casa2 > 0 && casa3 === 0) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100 e ${notas10} notas de 10`);
+            } else if (casa2 < 5 && casa2 > 0 && casa3 > 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${nota10} notas de 10, ${nota5} notas de 5 e ${nota1} notas de 1`);
+            } else if (casa2 < 5 && casa2 > 0 && casa3 < 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${nota10} notas de 10 e ${nota1} notas de 1`);
+            }
+
+            else if (casa2 > 5 && casa2 < 10 && casa3 === 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${nota50} notas de 50, ${notas10} notas de 10 e ${notas5} nota de 5`);
+            } else if (casa2 > 5 && casa2 < 10 && casa3 === 0) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${notas50} nota de 50 e ${notas10} notas de 10`);
+            } else if (casa2 > 5 && casa2 < 10 && casa3 > 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${nota50} nota de 50, ${nota10} notas de 10, ${nota5} notas de 5 e ${nota1} notas de um`);
+            } else if (casa2 > 5 && casa2 < 10 && casa3 < 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${nota50} nota de 50, ${nota10} notas de 10 e ${nota1} notas de um`);
+            }
+
+            else if (casa2 === 5 && casa3 === 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${nota50} nota de 50 e ${nota5} nota de cinco`);
+            } else if (casa2 === 5 && casa3 === 0) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100 e ${nota50} nota de 50`);
+            } else if (casa2 === 5 && casa3 > 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${nota50} nota de 50, ${nota5} nota de cinco e ${nota1} notas de 1`);
+            } else if (casa2 === 5 && casa3 < 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${nota50} nota de 50 e ${nota1} notas de um`);
+            }
+
+            else if (casa2 === 0 && casa3 === 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100 e ${nota5} nota de cinco`);
+            } else if (casa2 === 0 && casa3 === 0) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100`);
+            } else if (casa2 === 0 && casa3 > 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100, ${nota5} nota de cinco e ${nota1} notas de 1`);
+            } else if (casa2 === 0 && casa3 < 5) {
+                alert(`Para sacar o valor de ${saque} R$, você receberá ${nota100} notas de 100 e ${nota1} notas de um`);
+            }
+
+        } else if (saque < 100 && saque > 10 && casa3 != 0) {
+            if (casa1d > 5 && casa1d < 10 && casa2d === 0) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota50} nota de 50 e ${nota10} notas de 10`);
+            } else if (casa1d > 5 && casa1d < 10 && casa2d < 5) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota50} nota de 50, ${nota10} notas de 10 e ${nota1} notas de 1`);
+            } else if (casa1d > 5 && casa1d < 10 && casa2d === 5) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota50} nota de 50, ${nota10} notas de 10 e ${nota5} nota de 5`);
+            } else if (casa1d > 5 && casa1d < 10 && casa2d > 5) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota50} nota de 50, ${nota10} notas de 10, ${nota5} nota de 5 e ${nota1} notas de 1`);
+            }
+
+            else if (casa1d < 5 && casa1d > 0 && casa2d === 0) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota10} notas de 10`);
+            } else if (casa1d < 5 && casa1d > 0 && casa2d < 5) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota10} notas de 10 e ${nota1} notas de 1`);
+            } else if (casa1d < 5 && casa1d > 0 && casa2d === 5) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota10} notas de 10 e ${nota5} nota de 5`);
+            } else if (casa1d < 5 && casa1d > 0 && casa2d > 5) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota10} notas de 10, ${nota5} nota de 5 e ${nota1} notas de 1`);
+            }
+
+            else if (casa1d === 5 && casa2d === 0) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota50} nota de 50`);
+            } else if (casa1d === 5 && casa2d < 5) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota50} nota de 50 e ${nota1} notas de 1`);
+            } else if (casa1d === 5 && casa2d === 5) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota50} nota de 50 e ${nota5} nota de 5`);
+            } else if (casa1d === 5 && casa2d > 5) {
+             alert(`Para sacar o valor de ${saque} R$, você receberá ${nota50} nota de 50, ${nota5} nota de 5 e ${nota1} notas de 1`);
+            }
+        }
+    } else {
+        alert("Apenas valores entre 10 e 600")
+    }
+</script>
