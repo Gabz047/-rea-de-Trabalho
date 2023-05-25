@@ -1,5 +1,13 @@
 <script>
-    const um = Number(prompt("A"))
-    var casa3 = ((um % 100) % 10)
-    alert(`${casa3}`)
+ const lado1 = Number(prompt("Informe as medidas do triângulo, primeiro lado:"));
+ const lado2 = Number(prompt("Informe as medidas do triângulo, segundo lado:"));
+ const base = Number(prompt("Informe as medidas do triângulo, base:"));
+
+ if (lado1 === lado2 && lado1 === base && lado2 === base) {
+    alert(`Este triângulo possui todos lados iguais, logo ele é EQUILATERO`);
+ } else if (lado1 === lado2 && lado2 != base) {
+    alert(`Os lados desse triângulo são iguais, mas sua base é diferente, logo ele é ISÓCELES`);
+ } else if (lado1 !== lado2 !== base) {
+    alert(`Este triângulo não tem nenhum lado igual, logo ele é ESCALENO`);
+ }
 </script>
