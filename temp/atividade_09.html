@@ -1,165 +1,50 @@
 <script>
-    const num1 = Number(prompt("Informe  um número inteiro").replace(",","."));
-    const num2 = Number(prompt("Informe outro número inteiro").replace(",","."));
+    const num1 = Number(prompt("Informe  um número inteiro").trim().replace(",", "."));
+    const num2 = Number(prompt("Informe outro número inteiro").trim().replace(",", "."));
     const operacao = prompt("Qual operação você deseja realizar (adição: +), (subtração: -), (divisão: /), (multiplicação: *)");
+    let operesult = 0;
 
     if (operacao === "+" || operacao === "-" || operacao === "*" || operacao === "/") {
-    if (operacao === `+`) {
-        const adicao = num1 + num2
-        if (adicao % 2 === 0) {
-            if (adicao > 0) {
-                if (Number.isInteger(adicao)) {
-                    alert(`O número ${adicao} é Par, Positivo e Inteiro`);
 
-                } else {
-                    alert(`O número ${adicao} é Par, Positivo e Decimal`);
-                }
-            }
-
-            if (adicao < 0) {
-                if (Number.isInteger(adicao)) {
-                    alert(`O número ${adicao} é Par, Negativo e Inteiro`)
-                } else {
-                    alert(`O número ${adicao} é Par, Negativo e Decimal`)
-                }
-            }
-        } else {
-            if (adicao > 0) {
-                if (Number.isInteger(adicao)) {
-                    alert(`O número ${adicao} é Impar, Positivo e Inteiro`);
-
-                } else {
-                    alert(`O número ${adicao} é Impar, Positivo e Decimal`);
-                }
-            }
-
-            if (adicao < 0) {
-                if (Number.isInteger(adicao)) {
-                    alert(`O número ${adicao} é Impar, Negativo e Inteiro`)
-                } else {
-                    alert(`O número ${adicao} é Impar, Negativo e Decimal`)
-                }
-            }
-        }    
-    }
-
-    if (operacao === `-`) {
-        const subtracao = num1 - num2
-        if (subtracao % 2 === 0) {
-            if (subtracao > 0) {
-                if (Number.isInteger(subtracao)) {
-                    alert(`O número ${subtracao} é Par, Positivo e Inteiro`);
-
-                } else {
-                    alert(`O número ${subtracao} é Par, Positivo e Decimal`);
-                }
-            }
-
-            if (subtracao < 0) {
-                if (Number.isInteger(subtracao)) {
-                    alert(`O número ${subtracao} é Par, Negativo e Inteiro`)
-                } else {
-                    alert(`O número ${subtracao} é Par, Negativo e Decimal`)
-                }
-            }
-        } else {
-            if (subtracao > 0) {
-                if (Number.isInteger(subtracao)) {
-                    alert(`O número ${subtracao} é Impar, Positivo e Inteiro`);
-
-                } else {
-                    alert(`O número ${subtracao} é Impar, Positivo e Decimal`);
-                }
-            }
-
-            if (subtracao < 0) {
-                if (Number.isInteger(subtracao)) {
-                    alert(`O número ${subtracao} é Impar, Negativo e Inteiro`)
-                } else {
-                    alert(`O número ${subtracao} é Impar, Negativo e Decimal`)
-                }
-            }
-        }  
-    }
-    if (operacao === `/`) {
-        const divisao = num1 / num2
-        if (divisao % 2 === 0) {
-            if (divisao > 0) {
-                if (Number.isInteger(divisao)) {
-                    alert(`O número ${divisao} é Par, Positivo e Inteiro`);
-
-                } else {
-                    alert(`O número ${divisao} é Par, Positivo e Decimal`);
-                }
-            }
-
-            if (divisao < 0) {
-                if (Number.isInteger(divisao)) {
-                    alert(`O número ${divisao} é Par, Negativo e Inteiro`)
-                } else {
-                    alert(`O número ${divisao} é Par, Negativo e Decimal`)
-                }
-            }
-        } else {
-            if (divisao > 0) {
-                if (Number.isInteger(divisao)) {
-                    alert(`O número ${divisao} é Impar, Positivo e Inteiro`);
-
-                } else {
-                    alert(`O número ${divisao} é Impar, Positivo e Decimal`);
-                }
-            }
-
-            if (divisao < 0) {
-                if (Number.isInteger(divisao)) {
-                    alert(`O número ${divisao} é Impar, Negativo e Inteiro`)
-                } else {
-                    alert(`O número ${divisao} é Impar, Negativo e Decimal`)
-                }
-            }
-        }  
-    }
-    if (operacao === `*`) {
-        const multiplicao = num1 * num2
-        if (multiplicao % 2 === 0) {
-            if (multiplicao > 0) {
-                if (Number.isInteger(multiplicao)) {
-                    alert(`O número ${multiplicao} é Par, Positivo e Inteiro`);
-
-                } else {
-                    alert(`O número ${multiplicao} é Par, Positivo e Decimal`);
-                }
-            }
-
-            if (multiplicao < 0) {
-                if (Number.isInteger(multiplicao)) {
-                    alert(`O número ${multiplicao} é Par, Negativo e Inteiro`)
-                } else {
-                    alert(`O número ${multiplicao} é Par, Negativo e Decimal`)
-                }
-            }
-        } else {
-            if (multiplicao > 0) {
-                if (Number.isInteger(multiplicao)) {
-                    alert(`O número ${multiplicao} é Impar, Positivo e Inteiro`);
-
-                } else {
-                    alert(`O número ${multiplicao} é Impar, Positivo e Decimal`);
-                }
-            }
-
-            if (multiplicao < 0) {
-                if (Number.isInteger(multiplicao)) {
-                    alert(`O número ${multiplicao} é Impar, Negativo e Inteiro`)
-                } else {
-                    alert(`O número ${multiplicao} é Impar, Negativo e Decimal`)
-                }
-            }
+        if (operacao == "+") {
+            operesult = num1 + num2
         }
-        
-    }
+        else if (operacao == "-") {
+            operesult = num1 - num2
+        }
+        else if (operacao == "*") {
+            operesult = num1 * num2
+        }
+        else if (operacao == "/") {
+            operesult = num1 / num2
+        }       
+        if (operesult >= 0 && operesult % 2 === 0 && Number.isInteger(operesult)) {
+            alert(`O número ${operesult} é Par, Positivo e Inteiro`);
+        }
+        else if (operesult < 0 && operesult % 2 === 0 && Number.isInteger(operesult)) {
+            alert(`O número ${operesult} é Par, Negativo e Inteiro`);
+        }
+        else if (operesult >= 0 && operesult % 2 === 0 && !Number.isInteger(operesult)) {
+            alert(`O número ${operesult.toFixed(1).replace(".",",")} é Par, Positivo e Decimal`);
+        }
+        else if (operesult < 0 && operesult % 2 === 0 && !Number.isInteger(operesult)) {
+            alert(`O número ${operesult.toFixed(1).replace(".",",")} é Par, Negativo e Decimal`);
+        }
+        else if (operesult >= 0 && !operesult % 2 === 0 && Number.isInteger(operesult)) {
+            alert(`O número ${operesult} é Ímpar, Positivo e Inteiro`);
+        }
+        else if (operesult < 0 && !operesult % 2 === 0 && Number.isInteger(operesult)) {
+            alert(`O número ${operesult} é Ímpar, Negativo e Inteiro`);
+        }
+        else if (operesult >= 0 && !operesult % 2 === 0 && !Number.isInteger(operesult)) {
+            alert(`O número ${operesult.toFixed(1).replace(".",",")} é Ímpar, Positivo e Decimal`);
+        }
+
+        else if (operesult < 0 && operesult % 2 === 0 && !Number.isInteger(operesult)) {
+            alert(`O número ${operesult.toFixed(1).replace(".",",")} é Ímpar, Negativo e Decimal`);
+        }
 } else {
-    alert("APENAS AS 4 OPERAÇÕES ANIMAL")
-}
+        alert("APENAS AS 4 OPERAÇÕES ANIMAL")
+    }
 
 </script>
