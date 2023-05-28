@@ -1,69 +1,34 @@
 <meta charset="UTF-8">
 <script>
-    const int = Number(prompt("Informe um número inteiro menor que 1000"));
+    let int = Number(prompt("Informe um número inteiro menor que 1000"));
+    let cent = 0;
+    let dez = 0;
+    let uni = 0;
+    let mensagem = `O número possui: <br>`;
+
     if (int > 0 && int < 1000) {
 
-            var uni = ((int % 100) % 10);
-            var cent = Math.floor(int / 100);
-            var dez = Math.trunc((int % 100) / 10);
-
-        if (int >= 100 && cent > 1 && dez > 1 && uni > 1) {
-            alert(`${cent} centenas, ${dez} dezenas e ${uni} unidades`);
+        cent = Math.floor(int / 100)
+        int = int - (cent * 100)
+        dez = Math.floor(int / 10)
+        int = int - (dez * 10)
+        uni = Math.floor(int)
+        int = int - uni
+        
+        if (cent > 0) {
+            cent >= 2 ? mensagem = `${mensagem} ${cent} Centenas <br>` : mensagem = `${mensagem} ${cent} Centena <br>`
         }
 
-        else if (int >= 100 && cent > 1 && dez > 1 && uni < 2) {
-            alert(`${cent} centenas, ${dez} dezenas e ${uni} unidade`);
+        if (dez > 0) {
+            dez >= 2 ? mensagem = `${mensagem} ${dez} Dezenas <br>` : mensagem = `${mensagem} ${dez} Dezena <br>`
         }
 
-        else if (int >= 100 && cent > 1 && dez < 2 && uni > 1) {
-            alert(`${cent} centenas, ${dez} dezena e ${uni} unidades`);
+        if (uni > 0) {
+            uni >= 2 ? mensagem = `${mensagem} ${uni} Unidades <br>` : mensagem = `${mensagem} ${uni} Unidade <br>`
         }
 
-        else if (int >= 100 && cent < 2 && dez < 2 && uni > 1) {
-            alert(`${cent} centena, ${dez} dezena e ${uni} unidades`);
-        }
+        document.write(`${mensagem}`)
 
-        else if (int >= 100 && cent > 1 && dez < 2 && uni < 2) {
-            alert(`${cent} centenas, ${dez} dezena e ${uni} unidade`);
-        }
-
-        else if (int >= 100 && cent < 2 && dez > 1 && uni > 1) {
-            alert(`${cent} centena, ${dez} dezenas e ${uni} unidades`);
-        }
-
-        else if (int >= 100 && cent < 2 && dez > 1 && uni < 2) {
-            alert(`${cent} centena, ${dez} dezenas e ${uni} unidade`);
-        }
-
-        else if (int >= 100 && cent < 2 && dez < 2 && uni < 2) {
-            alert(`${cent} centena, ${dez} dezena e ${uni} unidade`);
-        }
-
-        if (int < 100 && dez > 1 && uni > 1) {
-            let dez = Math.trunc(int / 10);
-            let uni = int % 10;
-            alert(`${dez} dezenas e ${uni} unidades`);
-        }
-
-        else if (int < 100 && dez > 1 && uni < 2 ){
-            alert(`${dez} dezenas e ${uni} unidade`);
-        }
-
-        else if (int < 100 && int > 9 && dez < 2 && uni < 2){
-            alert(`${dez} dezena e ${uni} unidade`);
-        }
-
-        else if (int < 100 && int > 9 && dez < 2 && uni > 1){
-            alert(`${dez} dezena e ${uni} unidades`);
-        }
-
-        if (int < 10 && int > 1) {
-            alert(`${int} unidades`);
-        }
-
-        else if (int < 10 && int < 2) {
-            alert(`${int} unidade`);
-        }
     } else {
         alert(`Apenas números menores que 1000!`);
     }
