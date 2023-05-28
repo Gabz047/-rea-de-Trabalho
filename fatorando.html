@@ -1,70 +1,35 @@
 <meta charset="UTF-8">
 <script>
-    const int = Number(prompt("Informe um número inteiro menor que 1000"));
-    if (int > 0 && int < 1000) {
+    alert("Responda as perguntas próximas perguntas com 'S' ou 'N'");
+  const pergunta1 = prompt("Telefonou para vítima?").toLocaleUpperCase().trim();
+  const pergunta2 = prompt("Esteve no local do crime").toLocaleUpperCase().trim();
+  const pergunta3 = prompt("Mora perto da vítima?").toLocaleUpperCase().trim();
+  const pergunta4 = prompt("Devia para a vítima?").toLocaleUpperCase().trim();
+  const pergunta5  = prompt("Já trabalhou com a vítima?").toLocaleUpperCase().trim();
+  let valor = 0;
 
-            var uni = ((int % 100) % 10);
-            var cent = Math.floor(int / 100);
-            var dez = Math.trunc((int % 100) / 10);
+  pergunta1 == "S" ? valor1 = 1 : valor1 = 0
+  pergunta2 == "S" ? valor2 = 1 : valor2 = 0
+  pergunta3 == "S" ? valor3 = 1 : valor3 = 0
+  pergunta4 == "S" ? valor4 = 1 : valor4 = 0
+  pergunta5 == "S" ? valor5 = 1 : valor5 = 0
 
-        if (int >= 100 && cent > 1 && dez > 1 && uni > 1) {
-            alert(`${cent} centenas, ${dez} dezenas e ${uni} unidades`);
-        }
+  const somafinal = valor1 + valor2 + valor3 + valor4 + valor5
 
-        else if (int >= 100 && cent > 1 && dez > 1 && uni < 2) {
-            alert(`${cent} centenas, ${dez} dezenas e ${uni} unidade`);
-        }
+  if (somafinal < 2) {
+    document.write("Você é inocente");
+  }
 
-        else if (int >= 100 && cent > 1 && dez < 2 && uni > 1) {
-            alert(`${cent} centenas, ${dez} dezena e ${uni} unidades`);
-        }
+  else if (somafinal === 2) {
+    document.write("Você é suspeito");
+  }
 
-        else if (int >= 100 && cent < 2 && dez < 2 && uni > 1) {
-            alert(`${cent} centena, ${dez} dezena e ${uni} unidades`);
-        }
+  else if (somafinal > 2 && somafinal < 5) {
+    document.write("Você é cúmplice");
+  }
 
-        else if (int >= 100 && cent > 1 && dez < 2 && uni < 2) {
-            alert(`${cent} centenas, ${dez} dezena e ${uni} unidade`);
-        }
+  else if (somafinal === 5) {
+    document.write("Você é o assassino");
+  }
 
-        else if (int >= 100 && cent < 2 && dez > 1 && uni > 1) {
-            alert(`${cent} centena, ${dez} dezenas e ${uni} unidades`);
-        }
-
-        else if (int >= 100 && cent < 2 && dez > 1 && uni < 2) {
-            alert(`${cent} centena, ${dez} dezenas e ${uni} unidade`);
-        }
-
-        else if (int >= 100 && cent < 2 && dez < 2 && uni < 2) {
-            alert(`${cent} centena, ${dez} dezena e ${uni} unidade`);
-        }
-
-        if (int < 100 && dez > 1 && uni > 1) {
-            let dez = Math.trunc(int / 10);
-            let uni = int % 10;
-            alert(`${dez} dezenas e ${uni} unidades`);
-        }
-
-        else if (int < 100 && dez > 1 && uni < 2 ){
-            alert(`${dez} dezenas e ${uni} unidade`);
-        }
-
-        else if (int < 100 && int > 9 && dez < 2 && uni < 2){
-            alert(`${dez} dezena e ${uni} unidade`);
-        }
-
-        else if (int < 100 && int > 9 && dez < 2 && uni > 1){
-            alert(`${dez} dezena e ${uni} unidades`);
-        }
-
-        if (int < 10 && int > 1) {
-            alert(`${int} unidades`);
-        }
-
-        else if (int < 10 && int < 2) {
-            alert(`${int} unidade`);
-        }
-    } else {
-        alert(`Apenas números menores que 1000!`);
-    }
 </script>
