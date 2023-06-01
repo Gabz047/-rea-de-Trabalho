@@ -1,0 +1,29 @@
+<meta charset = "UTF-8">
+<script>
+    const nota = Number(prompt("Qual foi sua nota?").replace(",",".").trim());
+    let mensagem = "Sua nota em conceito é:";
+
+    if (nota <= 10 && nota >= 9) {
+        document.write(`${mensagem} A`);
+    }
+
+    else if (nota <= 8.9 && nota >= 8) {
+        document.write(`${mensagem} B`);
+    }
+
+    else if (nota <= 7.9 && nota >= 7) {
+        document.write(`${mensagem} C`);
+    }
+
+    else if (nota <= 6.9 && nota >= 6) {
+        document.write(`${mensagem} D`);
+    }
+
+    else if (nota <= 5.9 && nota >= 0) {
+        document.write(`${mensagem} E`);
+    } else {
+        document.write("Meu amigo, não sei onde você mora, mas nota só vai de 0 a 10!")
+    }
+
+
+</script>
