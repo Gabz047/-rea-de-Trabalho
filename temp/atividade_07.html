@@ -6,7 +6,7 @@
     let notas10 = 0;
     let notas5 = 0;
     let notas1 = 0;
-    let mensagem = `Para sacar o valor de ${saque} você recebera: <br>`
+    let mensagem = `Para sacar o valor de ${saque} você recebera: `
 
     if (saque >= 10 && saque <= 600) {
      
@@ -21,15 +21,76 @@
         notas1 = Math.floor(saque/1)
         saque = saque - notas1
 
-        notas100 >= 2 ?  mensagem = `${mensagem} ${notas100} Notas de 100 <br>` : mensagem = `${mensagem} ${notas100} Nota de 100 <br>`
+        let notaspendentes = 0
+        if  (notas100 > 0) {
+            notaspendentes++;
+        }
+        if  (notas50 > 0) {
+            notaspendentes++;
+        }
+        if  (notas10 > 0) {
+            notaspendentes++;
+        }
+        if  (notas5 > 0) {
+            notaspendentes++;
+        }
+        if  (notas1 > 0) {
+            notaspendentes++;
+        }
 
-        notas50 >= 2 ?  mensagem = `${mensagem} ${notas50} Notas de 50 <br>` : mensagem = `${mensagem} ${notas50} Nota de 50 <br>`
+        if (notas100 > 0) { 
+            mensagem = `${mensagem} ${notas100} Notas de 100`
+            notaspendentes--;
+            if (notaspendentes > 1) {
+                mensagem = mensagem + `, `;
+            } else if (notaspendentes == 1) {
+                mensagem = mensagem + ` e `;
+            } else {
+                mensagem = mensagem + `.`;
+            }
 
-        notas10 >= 2 ?  mensagem = `${mensagem} ${notas10} Notas de 10 <br>` : mensagem = `${mensagem} ${notas10} Nota de 10 <br>`
+        }
 
-        notas5 >= 2 ?  mensagem = `${mensagem} ${notas5} Notas de 5 <br>` : mensagem = `${mensagem} ${notas5} Nota de 5 <br>`
+        if (notas50 > 0) { 
+            mensagem = `${mensagem} ${notas50} Notas de 50`
+            notaspendentes--;
+            if (notaspendentes > 1) {
+                mensagem = mensagem + `, `;
+            } else if (notaspendentes == 1) {
+                mensagem = mensagem + ` e `;
+            } else {
+                mensagem = mensagem + `.`;
+            }
 
-        notas1 >= 2 ?  mensagem = `${mensagem} ${notas1} Notas de 1 <br>` : mensagem = `${mensagem} ${notas1} Nota de 1 <br>`
+        }
+
+        if (notas10 > 0) { 
+            mensagem = `${mensagem} ${notas10} Notas de 10`
+            notaspendentes--;
+            if (notaspendentes > 1) {
+                mensagem = mensagem + `, `;
+            } else if (notaspendentes == 1) {
+                mensagem = mensagem + ` e `;
+            } else {
+                mensagem = mensagem + `.`;
+            }
+
+        }
+
+        if (notas5 > 0) { 
+            mensagem = `${mensagem} ${notas5} Notas de 5`
+            notaspendentes--;
+            if (notaspendentes == 1) {
+                mensagem = mensagem + ` e `;
+            } else {
+                mensagem = mensagem + `.`;
+            }
+            }
+
+        if (notas1 > 0) { 
+            mensagem = `${mensagem} ${notas1} Notas de 1`
+            notaspendentes--;
+            }
 
         document.write(`${mensagem}`)
 
