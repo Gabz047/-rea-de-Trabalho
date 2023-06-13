@@ -4,7 +4,7 @@
     let cent = 0;
     let dez = 0;
     let uni = 0;
-    let mensagem = `O número possui: <br>`;
+    let mensagem = `O número possui:`;
 
     if (int > 0 && int < 1000) {
 
@@ -15,18 +15,37 @@
         uni = Math.floor(int)
         int = int - uni
         
-        if (cent > 0) {
-            cent >= 2 ? mensagem = `${mensagem} ${cent} Centenas <br>` : mensagem = `${mensagem} ${cent} Centena <br>`
+        if (cent > 0 && cent < 2) {
+            mensagem = mensagem + ` ${cent} centena`
+            if (cent > 1) {
+                mensagem = mensagem + `s`
+            }
+
+            if (dez > 0 && uni > 0) {
+                mensagem = mensagem + `, `
+            } else if (dez > 0 || uni > 0) {
+                mensagem = mensagem + ` e `
+            }
         }
 
-        if (dez > 0) {
-            dez >= 2 ? mensagem = `${mensagem} ${dez} Dezenas <br>` : mensagem = `${mensagem} ${dez} Dezena <br>`
-        }
+        if (dez > 0 && dez < 2) {
+            mensagem = mensagem + `${dez} dezena`
+            if (dez > 1) {
+                mensagem = mensagem + `s`
+            }
 
-        if (uni > 0) {
-            uni >= 2 ? mensagem = `${mensagem} ${uni} Unidades <br>` : mensagem = `${mensagem} ${uni} Unidade <br>`
+            if (uni > 0) {
+                mensagem = mensagem + ` e `
         }
+    }
 
+
+        if (uni > 0 && uni < 2) {
+            mensagem = mensagem + `${uni} unidade`
+            if (uni > 1) {
+                mensagem = mensagem + `s`
+            }
+    }
         document.write(`${mensagem}`)
 
     } else {
