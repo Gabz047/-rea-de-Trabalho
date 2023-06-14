@@ -41,7 +41,7 @@
         if (notas100 > 0 && notas100 < 2) {
             mensagem = `${mensagem} ${notas100} Nota de 100`
             notaspendentes--;
-            if (notaspendentes > 1) {
+            if (notaspendentes > 2) {
                 mensagem = mensagem + `, `;
             } else if (notaspendentes == 1) {
                 mensagem = mensagem + ` e `;
@@ -49,7 +49,7 @@
                 mensagem = mensagem + `.`;
             }
 
-        } else if (notas100 > 2) {
+        } else if (notas100 >= 2) {
             mensagem = `${mensagem} ${notas100} Notas de 100`
             notaspendentes--;
             if (notaspendentes > 1) {
@@ -72,17 +72,7 @@
                 mensagem = mensagem + `.`;
             }
 
-        } else if (notas50 > 2) {
-            mensagem = `${mensagem} ${notas50} Notas de 50`
-            notaspendentes--;
-            if (notaspendentes > 1) {
-                mensagem = mensagem + `, `;
-            } else if (notaspendentes == 1) {
-                mensagem = mensagem + ` e `;
-            } else {
-                mensagem = mensagem + `.`;
-            }
-        }
+        } 
 
         if (notas10 > 0 && notas10 < 2) {
             mensagem = `${mensagem} ${notas10} Nota de 10`
@@ -95,7 +85,7 @@
                 mensagem = mensagem + `.`;
             }
 
-        } else if (notas10 > 2) {
+        } else if (notas10 >= 2) {
             mensagem = `${mensagem} ${notas10} Notas de 10`
             notaspendentes--;
             if (notaspendentes > 1) {
@@ -121,9 +111,8 @@
         if (notas1 > 0 && notas1 < 2) {
             mensagem = `${mensagem} ${notas1} Nota de 1`
             notaspendentes--;
-        } else if (notas1 > 2) {
-            mensagem = `${mensagem} ${notas1} Nota de 1`
-            notaspendentes--;
+        } else if (notas1 >= 2) {
+            mensagem = `${mensagem} ${notas1} Notas de 1`
         }
 
         document.write(`${mensagem}`)

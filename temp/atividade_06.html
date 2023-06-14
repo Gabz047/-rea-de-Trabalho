@@ -15,35 +15,35 @@
         uni = Math.floor(int)
         int = int - uni
         
-        if (cent > 0 && cent < 2) {
+        if (cent > 0) {
             mensagem = mensagem + ` ${cent} centena`
             if (cent > 1) {
-                mensagem = mensagem + `s`
+                mensagem = mensagem + "s"
             }
 
             if (dez > 0 && uni > 0) {
-                mensagem = mensagem + `, `
+                mensagem = mensagem + ", "
             } else if (dez > 0 || uni > 0) {
-                mensagem = mensagem + ` e `
+                mensagem = mensagem + " e "
             }
         }
 
-        if (dez > 0 && dez < 2) {
+        if (dez > 0) {
             mensagem = mensagem + `${dez} dezena`
             if (dez > 1) {
-                mensagem = mensagem + `s`
+                mensagem = mensagem + "s"
             }
 
             if (uni > 0) {
-                mensagem = mensagem + ` e `
+                mensagem = mensagem + " e "
         }
     }
 
 
-        if (uni > 0 && uni < 2) {
+        if (uni > 0) {
             mensagem = mensagem + `${uni} unidade`
             if (uni > 1) {
-                mensagem = mensagem + `s`
+                mensagem = mensagem + "s"
             }
     }
         document.write(`${mensagem}`)
